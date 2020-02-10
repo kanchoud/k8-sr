@@ -1,0 +1,14 @@
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: external-nfs
+#  annotations:
+#    volume.beta.kubernetes.io/storage-class: "external-sc"
+spec:
+  storageClassName: external-sc
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 1Mi
+

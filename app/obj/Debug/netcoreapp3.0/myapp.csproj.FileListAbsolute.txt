@@ -1,0 +1,11 @@
+/root/app/bin/Debug/netcoreapp3.0/myapp
+/root/app/bin/Debug/netcoreapp3.0/myapp.deps.json
+/root/app/bin/Debug/netcoreapp3.0/myapp.runtimeconfig.json
+/root/app/bin/Debug/netcoreapp3.0/myapp.runtimeconfig.dev.json
+/root/app/bin/Debug/netcoreapp3.0/myapp.dll
+/root/app/bin/Debug/netcoreapp3.0/myapp.pdb
+/root/app/obj/Debug/netcoreapp3.0/myapp.csprojAssemblyReference.cache
+/root/app/obj/Debug/netcoreapp3.0/myapp.AssemblyInfoInputs.cache
+/root/app/obj/Debug/netcoreapp3.0/myapp.AssemblyInfo.cs
+/root/app/obj/Debug/netcoreapp3.0/myapp.dll
+/root/app/obj/Debug/netcoreapp3.0/myapp.pdb

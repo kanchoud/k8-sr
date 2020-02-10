@@ -1,0 +1,45 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: jenkins-nfs-in
+  labels:
+    app: jenkins-nfs-in
+spec:
+  ports:
+    - port: 80
+      targetPort: 8080
+  selector:
+    app: jenkins-nfs-in
+  type: NodePort
+---
+apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
+kind: Deployment
+metadata:
+  name: jenkins-nfs-in
+  labels:
+    app: jenkins-nfs-in
+spec:
+  selector:
+    matchLabels:
+      app: jenkins-nfs-in
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: jenkins-nfs-in
+    spec:
+      containers:
+      - image: jenkins/jenkins:kanv1
+        name: jenkins-nfs-in
+        ports:
+        - containerPort: 8080
+          name: jenkins-nfs-in
+        volumeMounts:
+        - name: jenkins-nfs-in-pvc
+          mountPath: /var/jenkins_home
+      volumes:
+      - name: jenkins-nfs-in-pvc
+        persistentVolumeClaim:
+          claimName: internal-nfs
+

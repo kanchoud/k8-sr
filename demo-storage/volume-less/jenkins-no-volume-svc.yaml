@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: jenkins-no-vol
+  labels:
+    app: jenkins-no-vol
+spec:
+  ports:
+    - port: 80
+      targetPort: 8080
+  selector:
+    app: jenkins-no-vol
+  type: NodePort

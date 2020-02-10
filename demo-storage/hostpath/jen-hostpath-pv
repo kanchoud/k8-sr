@@ -1,0 +1,15 @@
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: jen-hostpath-pv
+  labels:
+    pv: jen-hostpath-pv
+spec:
+  #persistentVolumeReclaimPolicy: Delete
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: "/abc/jen-hostpath-pv"
+---

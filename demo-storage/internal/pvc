@@ -1,0 +1,14 @@
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: internal-nfs
+#  annotations:
+#    volume.beta.kubernetes.io/storage-class: "example-nfs"
+spec:
+  storageClassName: example-nfs
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 1Mi
+

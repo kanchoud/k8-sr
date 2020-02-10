@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mypod-azuredisk
+spec:
+  containers:
+  - image: nginx
+    name: mypod
+    volumeMounts:
+      - name: mystorage
+        mountPath: /data
+  volumes:
+      - name: mystorage
+        azureDisk:
+          kind: Managed
+          diskName: kanchan
+          diskURI: /subscriptions/b8ccc607-226a-4694-93b2-cce97d283eed/resourceGroups/sravan/providers/Microsoft.Compute/disks/kanchan

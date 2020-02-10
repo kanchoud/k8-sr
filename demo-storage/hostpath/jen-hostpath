@@ -1,0 +1,45 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: jen-hostpath
+  labels:
+    app: jen-hostpath
+spec:
+  ports:
+    - port: 80
+      targetPort: 8080
+  selector:
+    app: jen-hostpath
+  type: NodePort
+---
+apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
+kind: Deployment
+metadata:
+  name: jen-hostpath
+  labels:
+    app: jen-hostpath
+spec:
+  selector:
+    matchLabels:
+      app: jen-hostpath
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: jen-hostpath
+    spec:
+      containers:
+      - image: jenkins/jenkins:kanv1
+        name: jen-hostpath
+        ports:
+        - containerPort: 8080
+          name: jen-hostpath
+        volumeMounts:
+        - name: jen-hostpath-pvc
+          mountPath: /var/jenkins_home
+      volumes:
+      - name: jen-hostpath-pvc
+        persistentVolumeClaim:
+          claimName: jenkins-hostpath-pvc
+

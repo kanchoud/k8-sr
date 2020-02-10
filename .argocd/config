@@ -1,0 +1,11 @@
+contexts:
+- name: 40.117.190.171:30095
+  server: 40.117.190.171:30095
+  user: 40.117.190.171:30095
+current-context: 40.117.190.171:30095
+servers:
+- insecure: true
+  server: 40.117.190.171:30095
+users:
+- auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE1Nzg1Njg2MjAsImlzcyI6ImFyZ29jZCIsIm5iZiI6MTU3ODU2ODYyMCwic3ViIjoiYWRtaW4ifQ.1dyop6TfAULYp1QvE3PZ0VKwuf6DmAMezC-6y3a4eD0
+  name: 40.117.190.171:30095
